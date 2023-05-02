@@ -12,10 +12,6 @@ export const exampleRouter = createTRPCRouter({
     .query(async ({ input }) => {
       console.log("im called, Date:", new Date());
       // https://restcountries.com/v3.1/alpha/jpn
-      const req = await fetch(
-        `https://restcountries.com/v3.1/alpha/${input.name}`
-      );
-      const data = await req.json();
-      return data;
+      return input.name;
     }),
 });
